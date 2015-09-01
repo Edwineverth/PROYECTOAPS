@@ -11,9 +11,5 @@ urlpatterns = patterns('',
     url(r'^eliminar/(?P<pk>[\d]+)$', eliminarCiudad.as_view(),name='eliminarCiudad'),
     url(r'^filtrar/$', filtrarCiudad.as_view(),name='buscar_ciudad'),
     url(r'^filtrador/$', filtrarAjaxciudad.as_view(),name='filtrador_ciudad'),
- 
-
-    #*********************PROVEEDOR***************************************
-    
-    
+  
 )

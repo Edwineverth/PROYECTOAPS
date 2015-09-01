@@ -8,6 +8,10 @@
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/stilo.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap-datetimepicker.css">
+<link rel="stylesheet" href="{{STATIC_URL}}css/bootstrap-datetimepicker.min.css">
+    
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,67 +26,64 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-      <a class="navbar-brand" href="#">SIGASOFT</a></div>
+      <a class="navbar-brand" href="/cliente/sistema">SIGASOFT SA</a></div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="topFixedNavbar1">
       <ul class="nav navbar-nav">
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">INVENTARIOS</a>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">INVENTARIO</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="Historia.html">PRODUCTOS</a></li>
-            <li><a href="Mision.html">ARTICULOS</a></li>
-            <li><a href="Vision.html">PROVEEDORES</a></li>
-            <li><a href="Vision.html">ORDEN COMPRA</a></li>
+            <li><a href="/productos/listar"><span class="glyphicon glyphicon-barcode"></i> GESTIONAR PRODUCTOS</a></li>
+  
+            <li class="divider"></li>
+            <li><a href="/proveedor/listar"><span class="glyphicon glyphicon-user"> GESTIONAR PROVEEDORES</a></li>
+            <li class="divider"></li>
+            <li><a href="/categoria/filtrar"><span class="glyphicon glyphicon-tag"> GESTIONAR CATEGORIA-MARCAS-TIPOS</a></li>
             
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
           </ul>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">VENTAS</a>
+       
+        </li>
+        <li></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">VENTAS</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="Historia.html">FACTURA</a></li>
-            <li><a href="Mision.html">DETALLES FACTURA</a></li>
-            <li><a href="/cliente/filtrar">CLIENTES</a></li>
+          
+            <li><a href="/factura/crear"><span class="glyphicon glyphicon-usd"> GENERAR FACTURA</a></li>
+            <li><a href="/factura/listado"><span class="glyphicon glyphicon-list-alt"> LISTAR FACTURAS</a></li>
+          
+            <li class="divider"></li>
             
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="/cliente/listado"><span class="glyphicon glyphicon-tags"> GESTIONAR CLIENTES</a></li>    
+            
           </ul>
-        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MANTENIMIENTO</a>
+       
+        </li>
+  
+
+         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MANTENIMIENTO</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="Historia.html">SOLICITUD</a></li>
-            <li><a href="Mision.html">REPORTE TECNICO</a></li>
-            <li><a href="Vision.html">FACTURACION</a></li>
-            
+            <li><a href="/articulos/listar"><span class="glyphicon glyphicon-cog"> GESTIONAR ARTÍCULO</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="/mantenimiento/listado/"><span class="glyphicon glyphicon-wrench"> MANTENIMIENTOS</a></li>
             <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-              
+            
+            <li><a href="/solicitudmantenimiento/crear/"><span class="glyphicon glyphicon-align-center"> GENERAR SOLICITUD</a></li>
+            
+            <li><a href="/solicitudmantenimiento/listar/"><span class="glyphicon glyphicon-filter"> LISTADO SOLICITUDES</a></li>
+            <li><a href="/solicitudmantenimiento/espera/"><span class="glyphicon glyphicon-hourglass"> SOLICITUDES EN ESPERA</a></li>
+            <li><a href="/solicitudmantenimiento/atendida/"><span class="glyphicon glyphicon-pawn"> SOLICITUDES ATENDIDAS</a></li>
+            <li class="divider"></li>
+            <li><a href="/modelo/listar"><span class="glyphicon glyphicon-qrcode"> GESTIONAR MODELOS</a></li>
+            <li class="divider"></li>
+            <li><a href="/mensajeria/filtrar"><span class="glyphicon glyphicon-envelope"> GESTIONAR MENSAJERIAS</a></li>
             
           </ul>
+        
         </li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        BUSCAR
+        <li><a >  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-user"> Bienvenido {{user.username}}</a></li>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Iniciar Sesión</a></li>
-        <li><a href="#">Registrarse</a></li>
-        <li class="dropdown">
-<ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+       <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-remove-sign"> CERRAR SESIÓN</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
@@ -109,12 +110,12 @@
 <div class="container">
   <div class="row">
 <div class="col-lg-4 col-md-6 col-sm-6">
-      <h2>Contact Us</h2>
+      <h2>Contactos</h2>
       <address>
-      <strong>MyCompany, Inc.</strong><br>
-      Sunny Autumn Plaza, Grand Coulee,<br>
-      CA, 91308-4075, US<br>
-      <abbr title="Phone">P:</abbr> (123) 456-7890
+      <strong>Optimasoft S.A.</strong><br>
+      UTMACH,<br>
+      CA, 0986574921, US<br>
+      <abbr title="Phone">P:</abbr> 07-2150-406
       </address>
       <h4>Social</h4>
       <div class="row">
@@ -140,9 +141,9 @@
       </div>
     </div>
     <div class="col-lg-4 col-sm-12">
-      <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, voluptates, soluta velit nostrum ut iste exercitationem vitae ipsum repellendus laudantium ab possimus nemo odio cumque illum nulla laborum blanditiis unde.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, voluptates, soluta velit nostrum ut iste exercitationem vitae ipsum repellendus laudantium ab possimus nemo odio cumque illum nulla laborum blanditiis unde.</p>
+      <h2>Acerca de:</h2>
+      <p>Somos una empresa dedicada al desarrollo de software para todo tipo de computador</p>
+      <p>Le ofrecemos la óptima eficiencia en cada uno de nuestros servicios, para que tenga las mejores comonidades al momento de realizar sus procesos</p>
     </div>
   </div>
 </div>
@@ -151,16 +152,83 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <p>Copyright © MyWebsite. All rights reserved.</p>
+        <p>Copyright © MyWebsite. Todos los derechos Recervados para esta pagina.</p>
       </div>
     </div>
   </div>
 </footer>
+<div class="container">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">ALERTA</h4>
+        </div>
+        <div class="modal-body">
+          <h5>Los siguientes productos estan agotados:</h5>
+          {% for producto  in productoslista %}
+            {% if producto.pro_cantidad < producto.pro_ex %}
+               <p>{{producto.id}}: {{producto.pro_nombre}} | Cantidad: {{producto.pro_cantidad}}</p>
+            {% endif %}
+            
+          {% endfor %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+{% block modales %}
+
+{% endblock %}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="{{STATIC_URL}}js/jquery-1.11.2.min.js"></script> 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="{{STATIC_URL}}js/bootstrap-datetimepicker.js"></script>
 <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+<script src="{{STATIC_URL}}js/moment.js"></script>
+
+<script src="{{STATIC_URL}}js/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ STATIC_URL }}Flat-UI/js/jquery.ui.touch-punch.min.js"></script>
+<script src="{{ STATIC_URL }}Flat-UI/js/bootstrap-select.js"></script>
+<script src="{{ STATIC_URL }}Flat-UI/js/bootstrap-switch.js"></script>
+<script src="{{ STATIC_URL }}Flat-UI/js/flatui-checkbox.js"></script>
+<script src="{{ STATIC_URL }}Flat-UI/js/flatui-radio.js"></script>
+<script src="{{ STATIC_URL }}Flat-UI/js/jquery.placeholder.js"></script>
+<script src="{{ STATIC_URL }}Flat-UI/js/typeahead.js"></script>
+<script src="{{ STATIC_URL }}Flat-UI/js/application.js"></script>
+<script src="{{ STATIC_URL }}filtrar/buscar-en-tabla.js"></script>
+<script src="{{ STATIC_URL }}filtrar/buscar-en-tabla.js"></script>
+<script >
+    
+  window.onload=function(){
+        var stock = 0
+        {% for producto  in productoslista %}
+            {% if producto.pro_cantidad < producto.pro_ex %}
+               stock += 1
+               console.log(stock)
+            {% endif %}
+            
+          {% endfor %}
+
+          if (stock >=1) {
+            $("#myModal").modal({backdrop: false});
+          };
+
+      }
+</script>
 {%block js%}
 {%endblock%}
 </body>
+
 </html>

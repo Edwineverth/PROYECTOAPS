@@ -1,0 +1,44 @@
+{% extends "SITIOWEB/nova/index.html" %}
+{% block content %}
+    
+
+    <section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>LOGEO</h1>
+                    <p>Escriba su nombre de usuario y contraseña para entrar a SIGASOFT</p>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="{% url 'homeinicio'%}">Home</a></li>
+                        
+                        <li class="/registrate/">REGISTRATE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->     
+   
+
+<section id="registration" class="container">
+       		
+            <form class="center"  method="POST" id="form-login">{% csrf_token %}
+                <fieldset class="registration-form">
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                         <button type="submit" class="btn btn-primary">INICIAR</button>
+                    </div>
+                </fieldset>
+            </form>
+       
+    </section><!--/#registration-->
+    
+{% endblock content %}
+
+    

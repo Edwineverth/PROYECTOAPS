@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'crispy_forms',
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,9 +43,13 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.sistema',
     'apps.articulos',
+    'apps.facturadetallle',
+    'apps.mantenimiento',
     'bootstrap3',
+    'table',
 
 )
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -93,9 +99,19 @@ MEDIA_ROOT =RUTA_PROYECTO.child('media')
 MEDIA_URL='http://127.0.0.1:8000/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+from django.core.urlresolvers import reverse_lazy
+LOGIN_URL=reverse_lazy('login')
+LOGIN_REDIRECT_URL= reverse_lazy('sistema')
+LOGOUT_URL=reverse_lazy('logout')
+
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=(
     RUTA_PROYECTO.child('static')),
 TEMPLATE_DIRS=(
     RUTA_PROYECTO.child('templates')),
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'django.core.context_processors.request',
+)
